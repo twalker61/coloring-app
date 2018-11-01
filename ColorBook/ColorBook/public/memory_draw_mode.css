@@ -1,0 +1,152 @@
+/* MAIN MENU CODE BEGINS */
+html{
+  cursor: url(icons/brushor.png), auto;
+}
+
+body{
+  margin: 0;
+/*  font: 3rem 'Pacifico', Helvetica, sans-serif;*/
+  color: #2b2b2b;
+  background-image: url(icons/backgroundImage.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+a{
+  text-decoration: none;
+  color: darkslategray;
+  font: 3rem 'Crafty Girls', cursive;
+}
+
+a:hover{
+  color: #ff5758;
+}
+
+
+
+#doneButtonGiraffeId{
+  position: absolute;
+  left: 89vw;
+  z-index: 101;
+  font-size: 2rem;
+  display: none;
+}
+
+#doneButtonFishId{
+  position: absolute;
+  left: 89vw;
+  z-index: 101;
+  font-size: 2rem;
+
+  display: none;
+}
+/* MAIN MENU CODE ENDS */
+
+/* FREE DRAW MODE*/
+
+
+video, canvas {
+  opacity: 100; /*Set this to 0 normally, but to 100 to see camera view*/
+  position: absolute;
+  top: 0;
+}
+
+.paintingWrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.backToMenu{
+  background-image: url(icons/home.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 10vw;
+  height: 10vw;
+  position: fixed;
+  z-index: 101;
+}
+
+.newPicture{
+  background-image: url(icons/generateNewImage.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 10vw;
+  height: 10vw;
+  position: fixed;
+  bottom: 10vw;
+  left: 0;
+  z-index: 1000;
+  display: none;
+}
+
+#displayColor{
+  top: 10px;
+  right: 10px;
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  border: solid 1px;
+  border-radius: 50%;
+}
+#continueId{
+  position: fixed;
+  left: 90vw;
+  bottom: 1vw;
+}
+.previousImage{
+  background-image: url(icons/generateNewImage.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 10vw;
+  height: 10vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+
+.button{
+  margin: 2vw;
+}
+
+.sneakpeak{
+  background-image: url(icons/sneakpeak.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 10vw;
+  height: 10vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display:none;
+}
+
+svg{
+  width: 80%;
+  z-index: 100;
+}
+
+ #fish {
+  display: none;
+}
+
+#fishPaint {
+ display: none;
+}
+
+#giraffe {
+  display: none; /*set to none to remove, set to block to see*/
+}
