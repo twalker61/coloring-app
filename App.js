@@ -16,6 +16,7 @@ import MusicSvg from './MusicSvg'
 import OctSvg from './OctSvg'
 import ParsleySvg from './ParsleySvg'
 import SandwichSvg from './SandwichSvg'
+import CameraScreen from './Camera'
 
 class ImgPreview extends Component {
   render() {
@@ -65,8 +66,13 @@ class PictureScreen extends Component {
       case "Parsley": 
       return(
         <View style={styles.container}>
-        <View><Text> I am an {display} </Text></View>
-        <ParsleySvg/>
+          <View><Text> I am an {display} </Text></View>
+          <ParsleySvg/>
+          <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Camera')}>
+            <Image 
+              style={{width: 50, height: 50}}
+              source={require("./Resources/camera_icon.png")}/>
+          </TouchableOpacity>
         </View>
         );
 
@@ -134,6 +140,7 @@ class HomeScreen extends Component {
 const RootStack = createStackNavigator({
   Home: {screen: HomeScreen},
   Picture: {screen: PictureScreen},
+  Camera: {screen: CameraScreen},
 },
 {
   initialRouteName: 'Home',
@@ -167,5 +174,10 @@ const styles = StyleSheet.create({
   text: {
     alignItems: 'center',
     marginTop: 20
+  },
+  button: {
+    backgroundColor: '#d1d1d1',
+    borderRadius: 20,
+    padding: 10,
   }
 });
