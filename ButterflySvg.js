@@ -23,7 +23,7 @@ export default class ButterflySvg extends Component {
   render() {
   	return (
   		<View>
-  			<Svg width={933.333} height={1213.333} viewBox="0 0 700 910" >
+  			<Svg width = "500" height = "500" viewBox="0 0 700 879">
 			    <Path class = "el-1" 
 			    fill={this.state.colored.includes("el-1") ? "#f47929" : "#000000"}
         		onPress={() => this.color("el-1")}
