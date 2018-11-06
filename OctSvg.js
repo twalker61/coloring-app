@@ -4,7 +4,7 @@ import Svg,{
     Path,
 } from 'react-native-svg';
 
-export default class SvgComponent extends Component {
+export default class OctSvg extends Component {
 
   constructor(props) {
     super(props);

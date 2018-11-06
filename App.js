@@ -10,7 +10,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image, Alert, TouchableOpacity} from 'react-native';
 import {createStackNavigator,} from 'react-navigation';
 import SvgUri from 'react-native-svg-uri';
-import SvgComponent from './SvgComponent'
+import ButterflySvg from './ButterflySvg'
 
 class ImgPreview extends Component {
   render() {
@@ -27,7 +27,7 @@ class PictureScreen extends Component {
     return(
       <View style={styles.container}>
       <View><Text> I am an {display} </Text></View>
-      <SvgComponent/>
+      <ButterflySvg/>
       </View>
       );
     //<SvgUri width='200' height='200' source={{uri: 'https://upload.wikimedia.org/wikipedia/commons/0/09/America_Online_logo.svg'}}/>
