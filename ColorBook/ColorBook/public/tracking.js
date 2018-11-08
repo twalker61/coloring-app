@@ -2117,7 +2117,7 @@
    * @default 30
    * @type {number}
    */
-  tracking.ColorTracker.prototype.minGroupSize = 30;
+  tracking.ColorTracker.prototype.minGroupSize = 30; // was 30
 
   /**
    * Calculates the central coordinate from the cloud points. The cloud points
@@ -2350,8 +2350,8 @@
       return results;
     }
 
-    for (var i = 0; i < height; i++) {
-      for (var j = 0; j < width; j++) {
+    for (var i = (height / 3); i < (2 * (height / 3)); i++) { //I changed these to try to focus on the center
+      for (var j = (width / 3); j < 2 * (width / 3); j++) { //were 0, height/width
         w += 4;
 
         if (marked[w]) {
@@ -2360,7 +2360,7 @@
 
         currGroupSize = 0;
 
-        queuePosition = -1;
+        queuePosition = -1; //was -1
         queue[++queuePosition] = w;
         queue[++queuePosition] = i;
         queue[++queuePosition] = j;
@@ -2380,7 +2380,7 @@
               var otherW = currW + neighboursW[k];
               var otherI = currI + neighboursI[k];
               var otherJ = currJ + neighboursJ[k];
-              if (!marked[otherW] && otherI >= 0 && otherI < height && otherJ >= 0 && otherJ < width) {
+              if (!marked[otherW] && otherI >= 0 && otherI < 2 * (height / 3) && otherJ >= 0 && otherJ < 2 * (width / 3) && otherJ > (width / 3)) {
                 queue[++queuePosition] = otherW;
                 queue[++queuePosition] = otherI;
                 queue[++queuePosition] = otherJ;
@@ -2421,7 +2421,7 @@
       var h = hsv[0],
         s = hsv[1],
         v = hsv[2];
-      if (h >= 270) {
+      if (h >= 260) {
         if (s >= 0.2) {
           if (v >= 0.25) {
             return true;
@@ -2473,7 +2473,7 @@
       var h = hsv[0],
         s = hsv[1],
         v = hsv[2];
-      if (h >= 100 && h <= 150) {
+      if (h >= 80 && h <= 170) {
         if (s >= 0.4) {
           if (v >= 0.3) {
             return true;
@@ -2499,7 +2499,7 @@
       var h = hsv[0],
         s = hsv[1],
         v = hsv[2];
-      if (h >= 212 && h <= 268) {
+      if (h >= 215 && h <= 255) {
         if (s >= 0.2) {
           if (v >= 0.35) {
             return true;
@@ -2528,7 +2528,7 @@
         v = hsv[2];
       if (h <= 20) {
         if (s >= 0.35) {
-          if (v >= 0.3) {
+          if (v >= 0.2) {
             return true;
           }
         }
@@ -2553,8 +2553,8 @@
         s = hsv[1],
         v = hsv[2];
       if (h >= 22 && h <= 48) {
-        if (s >= 0.3) {
-          if (v >= 0.3) {
+        if (s >= 0.25) {
+          if (v >= 0.25) {
             return true;
           }
         }
@@ -2578,8 +2578,8 @@
       var h = hsv[0],
         s = hsv[1],
         v = hsv[2];
-      if (h >= 50 && h <= 90) {
-        if (s >= 0.3) {
+      if (h >= 50 && h <= 75) {
+        if (s >= 0.35) {
           if (v >= 0.3) {
             return true;
           }
@@ -2604,9 +2604,9 @@
       var h = hsv[0],
         s = hsv[1],
         v = hsv[2];
-      if (h <= 20) {
-        if (s >= 0.3) {
-          if (v >= 0.5) {
+      if (h <= 10 || h >= 320) {
+        if (s >= 0.15 && s <= 0.6) {
+          if (v >= 0.4) {
             return true;
           }
         }
@@ -2631,8 +2631,8 @@
         s = hsv[1],
         v = hsv[2];
       
-      if (s <= 0.12) {
-        if (v <= 0.3) {
+      if (s <= 0.08) {
+        if (v <= 0.5) {
           return true;
         }
       } else {
@@ -2678,7 +2678,7 @@
       var h = hsv[0],
         s = hsv[1],
         v = hsv[2];
-      if (h >= 160 && h <= 200) {
+      if (h >= 175 && h <= 210) {
         if (s >= 0.2) {
           if (v >= 0.35) {
             return true;

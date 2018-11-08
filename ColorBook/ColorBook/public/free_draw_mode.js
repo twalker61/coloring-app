@@ -32,8 +32,8 @@ function colorCamera() {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     event.data.forEach(function(rect) {
-
-      if (rect.width > 50 && rect.height > 50 && rect.x > 100 && rect.x < 700 && rect.y > 150 && rect.y < 250) {
+      
+      if (rect.width > 110 && rect.height > 110 && rect.x > (canvas.width / 3) && rect.x < ((canvas.width / 3) + 300) && rect.y > (canvas.height / 3) && rect.y < ((canvas.height / 3) + 300)) {
         displayColor = document.getElementById("displayColor").style.backgroundColor = rect.color;
           console.log(rect.color);
 

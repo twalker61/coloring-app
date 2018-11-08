@@ -95,7 +95,7 @@ function colorCamera() {
       context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
       context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
 
-      if (rect.width > 300 && rect.height > 300) {
+      if (rect.width > 110 && rect.height > 110) { //were 300, 300
 
         displayColor = document.getElementById("displayColor").style.backgroundColor = rect.color;
         //GIRAFFEEEEEE
